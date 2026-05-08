@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Result</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <main class="quiz-container" role="main">
+      <div class="quiz-card result-card">
+        <h1 class="result-title">Quiz Complete!</h1>
+        <p class="result-score" aria-label="Your score">
+          You scored <strong>{{ score }}</strong> of
+          <strong>{{ total }}</strong> &mdash;
+          <strong>{{ percentage }}%</strong>
+        </p>
+
+        <section aria-label="Question breakdown">
+          <h2 class="breakdown-heading">Question Breakdown</h2>
+          <ol class="breakdown-list">
+            {% for item in breakdown %}
+            <li
+              class="breakdown-item {% if item.is_correct %}breakdown-item--correct{% else %}breakdown-item--wrong{% endif %}"
+            >
+              <span class="breakdown-indicator" aria-hidden="true">
+                {% if item.is_correct %}✓{% else %}✗{% endif %}
+              </span>
+              <div class="breakdown-detail">
+                <p class="breakdown-question">{{ item.question }}</p>
+                {% if not item.is_correct %}
+                <p class="breakdown-answer breakdown-answer--wrong">
+                  Your answer: <em>{{ item.selected }}</em>
+                </p>
+                <p class="breakdown-answer breakdown-answer--correct">
+                  Correct answer: <em>{{ item.correct_answer }}</em>
+                </p>
+                {% else %}
+                <p class="breakdown-answer breakdown-answer--correct">
+                  Correct: <em>{{ item.correct_answer }}</em>
+                </p>
+                {% endif %}
+              </div>
+            </li>
+            {% endfor %}
+          </ol>
+        </section>
+
+        <a
+          href="{% url 'web:restart' %}"
+          class="btn btn--restart"
+          role="button"
+          aria-label="Restart the quiz"
+        >
+          Restart Quiz
+        </a>
+      </div>
+    </main>
+  </body>
+</html>

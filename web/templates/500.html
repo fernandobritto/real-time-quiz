@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Something went wrong</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        min-height: 100vh;
+        background: #f3f4f6;
+        display: grid;
+        place-items: center;
+        font-family: system-ui, sans-serif;
+        color: #1f2937;
+        padding: 1rem;
+      }
+      .card {
+        background: #fff;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+        padding: 2.5rem 2rem;
+        max-width: 480px;
+        width: 100%;
+        text-align: center;
+        border-top: 4px solid #ef4444;
+      }
+      h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+      p {
+        color: #6b7280;
+        margin-bottom: 1.5rem;
+      }
+      a {
+        display: inline-block;
+        padding: 0.625rem 1.5rem;
+        background: #3b82f6;
+        color: #fff;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      a:hover {
+        opacity: 0.9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card" role="main">
+      <h1>Something went wrong</h1>
+      <p>
+        The quiz data could not be loaded. Please check the data file and try
+        again.
+      </p>
+      <a href="/">Back to Quiz</a>
+    </div>
+  </body>
+</html>

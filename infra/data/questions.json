@@ -1,0 +1,71 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the correct way to declare a variable with the type string in TypeScript?",
+      "alternatives": [
+        "let name: string = 'John';",
+        "let name = string 'John';",
+        "string name = 'John';",
+        "let:string name = 'John';"
+      ],
+      "correctAnswer": "let name: string = 'John';"
+    },
+    {
+      "id": 2,
+      "question": "Which TypeScript feature allows defining custom types?",
+      "alternatives": ["interface", "template", "package", "moduleImport"],
+      "correctAnswer": "interface"
+    },
+    {
+      "id": 3,
+      "question": "What does the TypeScript keyword 'readonly' do?",
+      "alternatives": [
+        "Marks a property as immutable after initialisation",
+        "Makes a class method return only primitive types",
+        "Prevents a class from being extended",
+        "Restricts a variable to read operations only at runtime"
+      ],
+      "correctAnswer": "Marks a property as immutable after initialisation"
+    },
+    {
+      "id": 4,
+      "question": "Which of the following correctly defines a TypeScript enum?",
+      "alternatives": [
+        "enum Direction { Up, Down, Left, Right }",
+        "enum Direction = { Up, Down, Left, Right }",
+        "const enum = Direction { Up, Down, Left, Right }",
+        "type Direction = enum { Up, Down, Left, Right }"
+      ],
+      "correctAnswer": "enum Direction { Up, Down, Left, Right }"
+    },
+    {
+      "id": 5,
+      "question": "What is a TypeScript 'type guard'?",
+      "alternatives": [
+        "A runtime check that narrows a variable's type within a conditional block",
+        "A compile-time decorator that prevents type widening",
+        "A utility type that makes all properties optional",
+        "An interface that enforces strict null checks"
+      ],
+      "correctAnswer": "A runtime check that narrows a variable's type within a conditional block"
+    },
+    {
+      "id": 6,
+      "question": "Which utility type makes all properties of a type optional in TypeScript?",
+      "alternatives": ["Partial<T>", "Optional<T>", "Nullable<T>", "Maybe<T>"],
+      "correctAnswer": "Partial<T>"
+    },
+    {
+      "id": 7,
+      "question": "How do you annotate a function that returns nothing in TypeScript?",
+      "alternatives": [
+        "function greet(): void {}",
+        "function greet(): null {}",
+        "function greet(): never {}",
+        "function greet(): undefined {}"
+      ],
+      "correctAnswer": "function greet(): void {}"
+    }
+  ]
+}
