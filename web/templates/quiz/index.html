@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <main class="quiz-container" role="main">
+      <div
+        class="quiz-card"
+        id="quiz-card"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        <p
+          class="progress-indicator"
+          id="progress"
+          aria-label="Quiz progress"
+        ></p>
+        <h1 class="question-text" id="question-text"></h1>
+
+        <ul
+          class="alternatives-list"
+          id="alternatives-list"
+          role="list"
+          aria-label="Answer choices"
+        ></ul>
+
+        <button
+          id="next-btn"
+          class="btn btn--next"
+          disabled
+          aria-disabled="true"
+          aria-label="Go to next question"
+        >
+          Next
+        </button>
+      </div>
+
+      <div
+        class="quiz-card quiz-card--error hidden"
+        id="error-card"
+        role="alert"
+      >
+        <p id="error-message">
+          An error occurred loading the quiz. Please refresh the page.
+        </p>
+      </div>
+    </main>
+
+    <script>
+      const TOTAL = {{ total }};
+    </script>
+    <script src="{% static 'js/quiz.js' %}"></script>
+  </body>
+</html>
