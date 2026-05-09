@@ -1,6 +1,8 @@
 """Web views: quiz page, result page, redirect, and restart."""
 from django.shortcuts import redirect, render
+from django.utils.decorators import method_decorator
 from django.views import View
+from django.views.decorators.csrf import ensure_csrf_cookie
 
 from api.views import SESSION_KEY_ANSWERS, SESSION_KEY_SCORE, SESSION_KEY_SEED
 from domain.exceptions import InvalidQuizDataError
@@ -20,6 +22,7 @@ class IndexRedirectView(View):
         return redirect("web:quiz")
 
 
+@method_decorator(ensure_csrf_cookie, name="get")
 class QuizView(View):
     """Render the main quiz page."""
 

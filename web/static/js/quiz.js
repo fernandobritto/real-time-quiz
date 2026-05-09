@@ -87,6 +87,12 @@
         },
         body: JSON.stringify({ question_id: questionId, selected }),
       });
+      if (!response.ok) {
+        showError(
+          "Failed to submit answer. The server returned an error. Please refresh.",
+        );
+        return;
+      }
       result = await response.json();
     } catch {
       showError(

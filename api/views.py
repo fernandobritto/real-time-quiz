@@ -103,3 +103,8 @@ class AnswerView(View):
             "is_correct": result[answer_validator.ANSWER_KEY_IS_CORRECT],
             "correct_answer": result[answer_validator.ANSWER_KEY_CORRECT_ANSWER],
         })
+
+        return JsonResponse({
+            "is_correct": result[answer_validator.ANSWER_KEY_IS_CORRECT],
+            "correct_answer": result[answer_validator.ANSWER_KEY_CORRECT_ANSWER],
+        })
